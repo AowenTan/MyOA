@@ -12,13 +12,13 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
 
+    //登录
     @Override
     public User login(String loginName, String password) {
         System.out.println("doing: service login");
         User user = new User();
         System.out.println("loginName："+loginName);
         user = userMapper.findUserByloginNameAndPassword(loginName, password);
-        System.out.println(user);
         return user;
     }
 }
