@@ -186,10 +186,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <div onClick="menuClick(this);" class="level1Style"><img src="style/images/MenuIcon/FUNC20082.gif" class="Icon" /> 系统管理</div>
             <ul style="display: none;" class="MenuLevel2">
                 <li class="level2">
-                    <div class="level2Style"><img src="style/images/MenuIcon/menu_arrow_single.gif" /> <a target="right" href="System_Role/list.jsp"> 岗位管理</a></div>
+                    <div class="level2Style"><img src="style/images/MenuIcon/menu_arrow_single.gif" /> <a target="right" href="role/findAll.do"> 岗位管理</a></div>
                 </li>
                 <li class="level2">
-                    <div class="level2Style"><img src="style/images/MenuIcon/menu_arrow_single.gif" /> <a target="right" href="System_Department/list.jsp"> 部门管理</a></div>
+                    <div class="level2Style"><img src="style/images/MenuIcon/menu_arrow_single.gif" /> <a target="right" href="dept/findAll.do"> 部门管理</a></div>
                 </li>
                 <li class="level2">
                     <div class="level2Style"><img src="style/images/MenuIcon/menu_arrow_single.gif" /> <a target="right" href="user/findAll.do"> 用户管理</a></div>

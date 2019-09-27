@@ -27,10 +27,18 @@
         <result property="email" column="email"/>
         <result property="descip" column="descip"/>
         <result property="role" column="role"/>
-        <!--<result property="dept" column="dept"/>-->
+        <association property="dept" javaType="com.taw.bean.Dept">
+            <id property="did" column="did"/>
+            <result property="dname" column="dname"/>
+            <result property="description" column="description"/>
+        </association>
     </resultMap>
 
     <select id="findUserByloginNameAndPassword" resultMap="userMap">
         SELECT * FROM user WHERE loginName=#{loginName} AND password=#{password};
+    </select>
+
+    <select id="findAll" resultMap="userMap">
+        SELECT * FROM user;
     </select>
 </mapper>

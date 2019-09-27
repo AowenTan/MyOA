@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
+
 @Controller
 @RequestMapping(value = "/user")
 public class UserController {
@@ -30,5 +32,12 @@ public class UserController {
         return mv;
     }
 
-
+    @RequestMapping("findAll.do")
+    public ModelAndView findAll(){
+        ModelAndView mv = new ModelAndView();
+        List<User> list = userService.findAll();
+        mv.addObject("list",list);
+        mv.setViewName("System_User/list");
+        return mv;
+    }
 }

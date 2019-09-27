@@ -41,4 +41,14 @@ public class Dept {
     public void setDeptList(List<Dept> deptList) {
         this.deptList = deptList;
     }
+
+    @Override
+    public String toString() {
+        return "Dept{" +
+                "did=" + did +
+                ", dname='" + dname + '\'' +
+                ", description='" + description + '\'' +
+                ", deptList=" + deptList +
+                '}';
+    }
 }
