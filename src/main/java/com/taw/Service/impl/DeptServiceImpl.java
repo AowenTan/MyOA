@@ -20,7 +20,7 @@ public class DeptServiceImpl implements DeptService {
     }
 
     @Override
-    public Dept findById(int did) {
-        return deptMapper.findById(did);
+    public Dept findById(int pid) {
+        return deptMapper.findById(pid);
     }
 }

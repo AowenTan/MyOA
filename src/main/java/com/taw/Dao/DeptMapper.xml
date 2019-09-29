@@ -10,6 +10,9 @@
     </select>
 
     <select id="findById" resultType="com.taw.bean.Dept">
-        SELECT * FROM dept WHERE did= (SELECT pid FROM dept WHERE did=#{did})
+        select
+        *
+        from dept
+        where did = #{pid,jdbcType=INTEGER}
     </select>
 </mapper>

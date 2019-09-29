@@ -8,6 +8,7 @@ public class Dept {
     private Integer did;
     private String dname;
     private String description;
+    private Integer pid;
     private List<Dept> deptList = new ArrayList<>();
 
     public Integer getDid() {
@@ -40,6 +41,14 @@ public class Dept {
 
     public void setDeptList(List<Dept> deptList) {
         this.deptList = deptList;
+    }
+
+    public Integer getPid() {
+        return pid;
+    }
+
+    public void setPid(Integer pid) {
+        this.pid = pid;
     }
 
     @Override

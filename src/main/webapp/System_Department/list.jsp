@@ -3,6 +3,7 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>部门列表</title>
@@ -42,15 +43,29 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </thead>
 
 		<!--显示数据列表-->
-        <tbody id="TableData" class="dataContainer" datakey="departmentList">
-			<tr class="TableDetail1 template">
-				<td><a href="_list_level2.html">${department.name}</a>&nbsp;</td>
-				<td>${department.parent.name}&nbsp;</td>
-				<td>${department.description}&nbsp;</td>
-				<td><a onClick="return window.confirm('这将删除所有的下级部门，您确定要删除吗？')" href="#">删除</a>
-					<a href="saveUI.html">修改</a>
-				</td>
-			</tr>
+        <%
+            List listName=(ArrayList)request.getAttribute("listName");
+            System.out.println("listName.get(1)="+listName.get(1));
+            int i=0;
+            List list = (ArrayList)request.getAttribute("list");
+            System.out.println(list);
+        %>
+        <!--显示数据列表-->
+        <tbody id="TableData" class="dataContainer">
+        <c:forEach items="${list}" var="dept">
+            <tr >
+                <td><a href="../dept/listNext/${dept.did}.do">${dept.dname}</a>&nbsp;</td>
+                <td><%=listName.get(i)%>&nbsp;</td>
+                <td>${dept.description}&nbsp;</td>
+                <td><a onClick="return window.confirm('这将删除所有的下级部门，您确定要删除吗？')" href="../dept/delete/${dept.did}.do">删除</a>
+                    <a href="../dept/updateDept/${dept.did}.do">修改</a>
+                </td>
+            </tr>
+            <%
+
+                i++;
+            %>
+        </c:forEach>
         </tbody>
     </table>
     

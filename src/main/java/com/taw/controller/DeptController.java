@@ -23,9 +23,9 @@ public class DeptController {
         List<Dept> list = deptService.findAll();
         List<String> listName = new ArrayList<String>();
         for(Dept dept : list){
-            if(dept.getDid() != null){
-                System.out.println(dept.getDid());
-                Dept parent = deptService.findById(dept.getDid());
+            if(dept.getPid() != null){
+                System.out.println("Pid: " + dept.getPid());
+                Dept parent = deptService.findById(dept.getPid());
                 System.out.println(parent);
                 listName.add(parent.getDname());
             }else {
@@ -35,7 +35,7 @@ public class DeptController {
 
         mv.addObject("list", list);
         mv.addObject("listName", listName);
-        mv.setViewName("/System_Department/list");
+        mv.setViewName("System_Department/list");
         return mv;
     }
 }
