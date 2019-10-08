@@ -12,4 +12,6 @@ import java.util.List;
 public interface DeptMapper {
     List<Dept> findAll();
     Dept findById(@Param("pid") int pid);
+    void deleteById(@Param("did") int did);
+    void deleteSonById(@Param("did") int did);
 }

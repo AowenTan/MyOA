@@ -6,13 +6,25 @@
 <mapper namespace="com.taw.Dao.DeptMapper">
 
     <select id="findAll" resultType="com.taw.bean.Dept">
-        SELECT * FROM dept
+        SELECT *
+        FROM dept
     </select>
 
     <select id="findById" resultType="com.taw.bean.Dept">
-        select
-        *
-        from dept
-        where did = #{pid,jdbcType=INTEGER}
+        SELECT *
+        FROM dept
+        WHERE did = #{pid,jdbcType=INTEGER}
     </select>
+
+    <delete id="deleteById">
+        DELETE
+        FROM dept
+        WHERE did = #{did}
+    </delete>
+
+    <delete id="deleteSonById">
+        DELETE
+        FROM dept
+        WHERE pid = #{did}
+    </delete>
 </mapper>

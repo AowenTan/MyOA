@@ -14,7 +14,7 @@ public class DeptServiceImpl implements DeptService {
     @Autowired
     private DeptMapper deptMapper;
 
-
+    @Override
     public List<Dept> findAll(){
         return deptMapper.findAll();
     }
@@ -22,5 +22,11 @@ public class DeptServiceImpl implements DeptService {
     @Override
     public Dept findById(int pid) {
         return deptMapper.findById(pid);
+    }
+
+    @Override
+    public void deleteDeptById(int did) {
+        deptMapper.deleteSonById(did);
+        deptMapper.deleteById(did);
     }
 }

@@ -107,4 +107,20 @@ public class User {
     }
 
     public User(){}
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "uid=" + uid +
+                ", loginName='" + loginName + '\'' +
+                ", password='" + password + '\'' +
+                ", name='" + name + '\'' +
+                ", sex='" + sex + '\'' +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                ", descip='" + descip + '\'' +
+                ", role='" + role + '\'' +
+                ", dept=" + dept +
+                '}';
+    }
 }

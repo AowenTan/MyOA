@@ -11,8 +11,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <script language="javascript" src="../script/jquery.js"></script>
     <script language="javascript" src="../script/pageCommon.js" charset="utf-8"></script>
     <script language="javascript" src="../script/PageUtils.js" charset="utf-8"></script>
-    <script language="javascript" src="../script/DemoData.js" charset="utf-8"></script>
-	<script language="javascript" src="../script/DataShowManager.js" charset="utf-8"></script>
     <link type="text/css" rel="stylesheet" href="../style/blue/pageCommon.css" />
     <script type="text/javascript">
     </script>

@@ -4,6 +4,7 @@ import com.taw.Service.DeptService;
 import com.taw.bean.Dept;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -24,9 +25,9 @@ public class DeptController {
         List<String> listName = new ArrayList<String>();
         for(Dept dept : list){
             if(dept.getPid() != null){
-                System.out.println("Pid: " + dept.getPid());
+//                System.out.println("Pid: " + dept.getPid());
                 Dept parent = deptService.findById(dept.getPid());
-                System.out.println(parent);
+//                System.out.println(parent);
                 listName.add(parent.getDname());
             }else {
                 listName.add(null);
@@ -37,5 +38,11 @@ public class DeptController {
         mv.addObject("listName", listName);
         mv.setViewName("System_Department/list");
         return mv;
+    }
+
+    @RequestMapping("/delete/{did}.do")
+    public String deleteById(@PathVariable("did") int did){
+        deptService.deleteDeptById(did);
+        return "redirect:/System_Department/list.jsp";
     }
 }
