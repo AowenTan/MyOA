@@ -47,11 +47,7 @@ public class RoleController {
         role.setRid(rid);
         role.setRname(rname);
         role.setRdescrip(rdescrip);
-        if (roleService.findByRname(role.getRname())==null){
-            roleService.updateRole(role);
-            return "redirect:/role/findAll.do";
-        }else{
-
-        }
+        roleService.updateRole(role);
+        return "redirect:/role/findAll.do";
     }
 }
