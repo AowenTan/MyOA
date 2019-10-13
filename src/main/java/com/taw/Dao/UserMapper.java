@@ -13,4 +13,6 @@ public interface UserMapper {
 
     User findUserByloginNameAndPassword(@Param("loginName") String loginName, @Param("password") String password);
     List<User> findAll();
+    void deleteUserById(@Param("uid") int uid);
+    void deleteUserByDid(@Param("did") int did);
 }

@@ -8,4 +8,8 @@ public interface UserService {
     User login(String loginName, String password);
 
     List<User> findAll();
+
+    void deleteUserById(int uid);
+
+    void deleteUserByDid(int did);
 }

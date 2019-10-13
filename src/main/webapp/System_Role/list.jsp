@@ -48,7 +48,7 @@
                 <td>${role.rname}&nbsp;</td>
                 <td>${role.rdescrip}&nbsp;</td>
                 <td><a onClick="return delConfirm()" href="../role/delete/${role.rid}.do">删除</a>
-                    <a href="../role/updateRole/${role.rid}.do">修改</a>
+                    <a href="/role/updateRole/${role.rid}.do">修改</a>
                     <a href="/System_Role/setPrivilegeUI.jsp">设置权限</a>
                 </td>
             </tr>

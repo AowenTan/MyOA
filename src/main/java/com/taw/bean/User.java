@@ -12,6 +12,7 @@ public class User {
     private String descip;
     private String role;
     private Dept dept;
+    private Integer did;
 
     public Integer getUid() {
         return uid;
@@ -93,7 +94,15 @@ public class User {
         this.dept = dept;
     }
 
-    public User(Integer uid, String loginName, String password, String name, String sex, String phone, String email, String descip, String role, Dept dept) {
+    public Integer getDid() {
+        return did;
+    }
+
+    public void setDid(Integer did) {
+        this.did = did;
+    }
+
+    public User(Integer uid, String loginName, String password, String name, String sex, String phone, String email, String descip, String role, Dept dept, Integer did) {
         this.uid = uid;
         this.loginName = loginName;
         this.password = password;
@@ -104,6 +113,7 @@ public class User {
         this.descip = descip;
         this.role = role;
         this.dept = dept;
+        this.did = did;
     }
 
     public User(){}

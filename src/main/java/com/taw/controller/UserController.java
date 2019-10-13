@@ -8,6 +8,7 @@ import com.taw.bean.Role;
 import com.taw.bean.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -49,7 +50,7 @@ public class UserController {
         List<User> list = userService.findAll();
         List<Role> roleList = roleService.findAll();
         for (User u: list){
-            Dept dept = deptService.findById(u.getDept().getDid());
+            Dept dept = deptService.findByid(u.getDept().getDid());
             u.setDept(dept);
             u.setRole(roleList.get(flag).getRname());
             flag++;
@@ -58,5 +59,11 @@ public class UserController {
         mv.addObject("list", list);
         mv.setViewName("System_User/list");
         return mv;
+    }
+
+    @RequestMapping("/delete/{uid}.do")
+    public String deleteUserById(@PathVariable("uid") int uid){
+        userService.deleteUserById(uid);
+        return "redirect:/user/findAll.do";
     }
 }

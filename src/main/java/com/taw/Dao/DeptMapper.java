@@ -11,7 +11,7 @@ import java.util.List;
 @Transactional
 public interface DeptMapper {
     List<Dept> findAll();
-    Dept findById(@Param("pid") int pid);
-    void deleteById(@Param("did") int did);
-    void deleteSonById(@Param("did") int did);
+    Dept findByid(@Param("pid") int pid);
+    List<Dept> findSonByPid(@Param("pid") Integer pid);
+    void deleteDeptById(@Param("did") int did);
 }

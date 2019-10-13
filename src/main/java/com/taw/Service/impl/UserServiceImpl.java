@@ -29,4 +29,14 @@ public class UserServiceImpl implements UserService {
         user = userMapper.findUserByloginNameAndPassword(loginName, password);
         return user;
     }
+
+    @Override
+    public void deleteUserById(int uid) {
+        userMapper.deleteUserById(uid);
+    }
+
+    @Override
+    public void deleteUserByDid(int did) {
+        userMapper.deleteUserByDid(did);
+    }
 }

@@ -51,7 +51,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	                <td>${user.dept.dname}&nbsp;</td>
 	                <td>${user.role}&nbsp;</td>
 	                <td>${user.descip}&nbsp;</td>
-	                <td><a onClick="return delConfirm()" href="list.html">删除</a>
+	                <td><a onClick="return delConfirm()" href="../user/delete/${user.uid}.do">删除</a>
 	                    <a href="../System_User/saveUI.jsp">修改</a>
 						<a href="#" onClick="return window.confirm('您确定要初始化密码为1234吗？')">初始化密码</a>
 	                </td>
@@ -63,7 +63,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <!-- 其他功能超链接 -->
     <div id="TableTail">
         <div id="TableTail_inside">
-            <a href="../user/addUI.do"><img src="../style/images/createNew.png" /></a>
+            <a href="saveUI.jsp"><img src="../style/images/createNew.png" /></a>
         </div>
     </div>
 </div>

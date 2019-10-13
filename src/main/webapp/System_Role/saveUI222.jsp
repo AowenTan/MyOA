@@ -1,5 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
@@ -40,19 +41,23 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
         <div class="ItemBlock_Title1"><!-- 信息说明<DIV CLASS="ItemBlock_Title1">
         	<IMG BORDER="0" WIDTH="4" HEIGHT="7" SRC="../style/blue/images/item_point.gif" /> 岗位信息 </DIV>  -->
         </div>
-        <h3>岗位ID:${sessionScope.get("updateRid")}</h3>
         
         <!-- 表单内容显示 -->
         <div class="ItemBlockBorder">
             <div class="ItemBlock">
                 <table cellpadding="0" cellspacing="0" class="mainForm">
+
+                    <tr>
+                        <td width="100">岗位id</td>
+                        <td><input type="text" name="rid" class="InputStyle" value="${role.rid}" readonly="readonly"/> *</td>
+                    </tr>
                     <tr>
                         <td width="100">岗位名称</td>
-                        <td><input type="text" name="rname" class="InputStyle" /> *</td>
+                        <td><input type="text" name="rname" class="InputStyle" value="${role.rname}"/> *</td>
                     </tr>
                     <tr>
                         <td>岗位说明</td>
-                        <td><textarea name="rdescrip" class="TextareaStyle"></textarea></td>
+                        <td><textarea name="rdescrip" class="TextareaStyle" >${role.rdescrip}</textarea></td>
                     </tr>
                 </table>
             </div>

@@ -20,13 +20,13 @@ public class DeptServiceImpl implements DeptService {
     }
 
     @Override
-    public Dept findById(int pid) {
-        return deptMapper.findById(pid);
+    public Dept findByid(int pid) {
+        return deptMapper.findByid(pid);
     }
 
     @Override
-    public void deleteDeptById(int did) {
-        deptMapper.deleteSonById(did);
-        deptMapper.deleteById(did);
-    }
+    public void deleteDeptById(int did) { deptMapper.deleteDeptById(did); }
+
+    @Override
+    public List<Dept> findSonByPid(Integer pid) { return deptMapper.findSonByPid(pid);}
 }

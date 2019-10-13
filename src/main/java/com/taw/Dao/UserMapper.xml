@@ -35,10 +35,23 @@
     </resultMap>
 
     <select id="findUserByloginNameAndPassword" resultMap="userMap">
-        SELECT * FROM user WHERE loginName=#{loginName} AND password=#{password};
+        SELECT *
+        FROM user
+        WHERE loginName=#{loginName} AND password=#{password};
     </select>
 
     <select id="findAll" resultMap="userMap">
-        SELECT * FROM user;
+        SELECT *
+        FROM user;
     </select>
+
+    <delete id="deleteUserById">
+        DELETE FROM user
+        WHERE uid = #{uid}
+    </delete>
+
+    <delete id="deleteUserByDid">
+        DELETE FROM user
+        WHERE did = #{did}
+    </delete>
 </mapper>
