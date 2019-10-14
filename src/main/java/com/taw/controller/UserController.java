@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
@@ -64,6 +65,46 @@ public class UserController {
     @RequestMapping("/delete/{uid}.do")
     public String deleteUserById(@PathVariable("uid") int uid){
         userService.deleteUserById(uid);
+        return "redirect:/user/findAll.do";
+    }
+
+    @RequestMapping("updateUser/{uid}.do")
+    public ModelAndView updateUser(@PathVariable("uid") int uid) {
+        ModelAndView mv = new ModelAndView();
+        User user = userService.findByUid(uid);
+        List<Dept> deptList = deptService.findAll();
+        mv.addObject("user", user);
+        mv.addObject("deptList", deptList);
+        mv.setViewName("/System_User/saveUI222");
+        return mv;
+    }
+
+    @RequestMapping("update.do")
+    public ModelAndView update(HttpServletRequest request) {
+        User user = new User();
+        ModelAndView mv = new ModelAndView();
+        user.setUid(Integer.parseInt(request.getParameter("uid")));
+        user.setLoginName(request.getParameter("loginName"));
+        user.setName(request.getParameter("name"));
+        user.setSex(request.getParameter("sex"));
+        user.setPhone(request.getParameter("phoneNumber"));
+        user.setEmail(request.getParameter("email"));
+        user.setDescip(request.getParameter("description"));
+        user.setDid(Integer.parseInt(request.getParameter("did")));
+        if(userService.check(user)==null){
+            userService.updateUser(user);
+            mv.setViewName("redirect:/user/findAll.do");
+        }else{
+            mv.addObject("user", user);
+            mv.setViewName("System_User/saveUI222");
+            mv.addObject("message", "登录名重复");
+        }
+        return mv;
+    }
+
+    @RequestMapping("resetPassword/{uid}.do")
+    public String resetPassword(@PathVariable("uid") int uid){
+        userService.resetPassword(uid);
         return "redirect:/user/findAll.do";
     }
 }

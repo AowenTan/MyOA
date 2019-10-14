@@ -54,4 +54,28 @@
         DELETE FROM user
         WHERE did = #{did}
     </delete>
+
+    <select id="findByUid" resultType="com.taw.bean.User">
+        SELECT *
+        FROM user
+        WHERE uid = #{uid}
+    </select>
+
+    <update id="resetPassword">
+        UPDATE user
+        SET password = '1234'
+        WHERE uid = #{uid}
+    </update>
+
+    <update id="updateUser">
+        UPDATE user
+        SET loginName = #{user.loginName},name = #{user.name},sex = #{user.sex},phone = #{user.phone},email = #{user.email},descip = #{user.descip},did = #{user.did}
+        WHERE uid = #{user.uid}
+    </update>
+
+    <select id="check" resultType="com.taw.bean.User">
+        SELECT *
+        FROM user
+        WHERE loginName = #{user.loginName} AND uid != #{user.uid};
+    </select>
 </mapper>

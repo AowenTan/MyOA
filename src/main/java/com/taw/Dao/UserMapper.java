@@ -15,4 +15,8 @@ public interface UserMapper {
     List<User> findAll();
     void deleteUserById(@Param("uid") int uid);
     void deleteUserByDid(@Param("did") int did);
+    User findByUid(@Param("uid") int uid);
+    void resetPassword(@Param("uid") int uid);
+    void updateUser(@Param("user") User user);
+    User check(@Param("user") User user);
 }

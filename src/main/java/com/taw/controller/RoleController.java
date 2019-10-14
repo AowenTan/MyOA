@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpServletRequest;
-
 @Controller
 @RequestMapping("/role")
 public class RoleController {
@@ -42,12 +40,24 @@ public class RoleController {
     }
 
     @RequestMapping("update.do")
-    public String update(HttpServletRequest request, @RequestParam("rid") int rid,@RequestParam("rname") String rname, @RequestParam("rdescrip") String rdescrip){
+    public String update(@RequestParam("rid") int rid,@RequestParam("rname") String rname, @RequestParam("rdescrip") String rdescrip){
         Role role = new Role();
         role.setRid(rid);
         role.setRname(rname);
         role.setRdescrip(rdescrip);
         roleService.updateRole(role);
+        return "redirect:/role/findAll.do";
+    }
+
+    @RequestMapping("insert.do")
+    public String insertRole(@RequestParam("rname") String rname, @RequestParam("rdescrip") String rdescrip){
+        System.out.println("123");
+        Role role = new Role();
+        role.setRname(rname);
+        role.setRdescrip(rdescrip);
+        if(roleService.findByRname(role.getRname())==null){
+            roleService.insertRole(role);
+        }
         return "redirect:/role/findAll.do";
     }
 }

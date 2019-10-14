@@ -12,4 +12,12 @@ public interface UserService {
     void deleteUserById(int uid);
 
     void deleteUserByDid(int did);
+
+    User findByUid(int uid);
+
+    void resetPassword(int uid);
+
+    void updateUser(User user);
+
+    User check(User user);
 }

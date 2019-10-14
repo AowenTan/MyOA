@@ -39,4 +39,24 @@ public class UserServiceImpl implements UserService {
     public void deleteUserByDid(int did) {
         userMapper.deleteUserByDid(did);
     }
+
+    @Override
+    public User findByUid(int uid) {
+        return userMapper.findByUid(uid);
+    }
+
+    @Override
+    public void resetPassword(int uid) {
+        userMapper.resetPassword(uid);
+    }
+
+    @Override
+    public void updateUser(User user) {
+        userMapper.updateUser(user);
+    }
+
+    @Override
+    public User check(User user) {
+        return userMapper.check(user);
+    }
 }
