@@ -20,4 +20,6 @@ public interface UserService {
     void updateUser(User user);
 
     User check(User user);
+
+    void register(User user);
 }

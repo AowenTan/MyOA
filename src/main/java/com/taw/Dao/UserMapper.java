@@ -19,4 +19,5 @@ public interface UserMapper {
     void resetPassword(@Param("uid") int uid);
     void updateUser(@Param("user") User user);
     User check(@Param("user") User user);
+    void register(@Param("user") User user);
 }

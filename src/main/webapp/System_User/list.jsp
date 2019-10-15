@@ -64,7 +64,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <!-- 其他功能超链接 -->
     <div id="TableTail">
         <div id="TableTail_inside">
-            <a href="/System_User/saveUI.jsp"><img src="../style/images/createNew.png" /></a>
+            <a href="/user/insertUserlist.do"><img src="../style/images/createNew.png" /></a>
         </div>
     </div>
 </div>

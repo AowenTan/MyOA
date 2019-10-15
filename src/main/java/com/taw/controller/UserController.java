@@ -107,4 +107,30 @@ public class UserController {
         userService.resetPassword(uid);
         return "redirect:/user/findAll.do";
     }
+
+    @RequestMapping("insertUserlist.do")
+    public ModelAndView insertUserList(){
+        ModelAndView mv = new ModelAndView();
+        List<Dept> deptList = deptService.findAll();
+        mv.addObject("deptList", deptList);
+        mv.setViewName("System_User/saveUI");
+        return mv;
+    }
+
+    @RequestMapping("register.do")
+    public String register(HttpServletRequest request){
+        User user = new User();
+        user.setLoginName(request.getParameter("loginName"));
+        user.setPassword("1234");
+        user.setName(request.getParameter("name"));
+        user.setSex(request.getParameter("sex"));
+        user.setPhone(request.getParameter("phoneNumber"));
+        user.setEmail(request.getParameter("email"));
+        user.setDescip(request.getParameter("description"));
+        user.setDid(Integer.parseInt(request.getParameter("did")));
+        if (userService.check(user) == null){
+            userService.register(user);
+        }
+        return "redirect:/user/findAll.do";
+    }
 }

@@ -59,4 +59,9 @@ public class UserServiceImpl implements UserService {
     public User check(User user) {
         return userMapper.check(user);
     }
+
+    @Override
+    public void register(User user) {
+        userMapper.register(user);
+    }
 }

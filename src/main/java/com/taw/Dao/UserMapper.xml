@@ -78,4 +78,9 @@
         FROM user
         WHERE loginName = #{user.loginName} AND uid != #{user.uid};
     </select>
+
+    <insert id="register">
+        INSERT INTO user (loginName,password,name,sex,phone,email,descip,did)
+        VALUES(#{user.loginName},#{user.password},#{user.name},#{user.sex},#{user.phone},#{user.email},#{user.descip},#{user.did});
+    </insert>
 </mapper>

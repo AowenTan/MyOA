@@ -8,11 +8,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <head>
 	<title>用户信息</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script language="javascript" src="../script/jquery.js"></script>
-    <script language="javascript" src="../script/pageCommon.js" charset="utf-8"></script>
-    <script language="javascript" src="../script/PageUtils.js" charset="utf-8"></script>
-	<script language="javascript" src="../script/DataShowManager.js" charset="utf-8"></script>
-    <link type="text/css" rel="stylesheet" href="../style/blue/pageCommon.css" />
+    <script language="javascript" src="/script/jquery.js"></script>
+    <script language="javascript" src="/script/pageCommon.js" charset="utf-8"></script>
+    <script language="javascript" src="/script/PageUtils.js" charset="utf-8"></script>
+	<script language="javascript" src="/script/DataShowManager.js" charset="utf-8"></script>
+    <link type="text/css" rel="stylesheet" href="/style/blue/pageCommon.css" />
     <script type="text/javascript">
     	$(function(){
     		$("#loginName").blur(function(){
@@ -35,7 +35,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div id="Title_bar_Head">
         <div id="Title_Head"></div>
         <div id="Title"><!--页面标题-->
-            <img border="0" width="13" height="13" src="../style/images/title_arrow.gif"/> 用户信息
+            <img border="0" width="13" height="13" src="/style/images/title_arrow.gif"/> 用户信息
         </div>
         <div id="Title_End"></div>
     </div>
@@ -43,9 +43,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <!--显示表单内容-->
 <div id=MainArea>
-    <form id="fom" action="../user/register.do" method="post">
+    <form id="fom" action="/user/register.do" method="post">
         <div class="ItemBlock_Title1"><!-- 信息说明 --><div class="ItemBlock_Title1">
-        	<img border="0" width="4" height="7" src="../style/blue/images/item_point.gif" /> 用户信息 </div> 
+        	<img border="0" width="4" height="7" src="/style/blue/images/item_point.gif" /> 用户信息 </div>
         </div>
         
         <!-- 表单内容显示 -->
@@ -88,7 +88,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </div>
         
 		<div class="ItemBlock_Title1"><!-- 信息说明 --><div class="ItemBlock_Title1">
-        	<img border="0" width="4" height="7" src="../style/blue/images/item_point.gif" /> 岗位设置 </div> 
+        	<img border="0" width="4" height="7" src="/style/blue/images/item_point.gif" /> 岗位设置 </div>
         </div>
         
         <!-- 表单内容显示 -->
@@ -114,7 +114,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <!-- 表单操作 -->
         <div id="InputDetailBar">
             <input id="sub" type="image" src="../style/images/save.png"/>
-            <a href="javascript:history.go(-1);"><img src="../style/images/goBack.png"/></a>
+            <a href="javascript:history.go(-1);"><img src="/style/images/goBack.png"/></a>
         </div>
     </form>
 </div>
